@@ -24,6 +24,7 @@ public class Student {
 		studentCount++;
 		
 	}
+	
 	public Student(Student other) {
 		this.studentId = other.studentId;
 		this.name = other.name;
@@ -33,6 +34,51 @@ public class Student {
 		this.remarks = new StringBuffer(other.remarks);
 		studentCount++;
 	}
+	
+	
+	public int getStudentId() {
+	    return studentId;
+	}
+	public void setStudentId(int studentId) {
+		this.studentId = studentId;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getMarks() {
+		return marks;
+	}
+	public void setMarks(int marks) {
+		this.marks = marks;
+	}
+	public char getSection() {
+		return section;
+	}
+	public void setSection(char section) {
+		this.section = section;
+	}
+	public boolean isPassed() {
+		return isPassed;
+	}
+	public void setPassed(boolean isPassed) {
+		this.isPassed = isPassed;
+	}
+	public StringBuffer getRemarks() {
+		return remarks;
+	}
+	public void setRemarks(StringBuffer remarks) {
+		this.remarks = remarks;
+	}
+	public static int getStudentCount() {
+		return studentCount;
+	}
+	public static void setStudentCount(int studentCount) {
+		Student.studentCount = studentCount;
+	}
+	
 	public void printDetails() {
 		System.out.println("ID: "+studentId);
 		System.out.println("NAME: " + name);
@@ -40,13 +86,16 @@ public class Student {
 		System.out.println("Pass: "+isPassed);
 		System.out.println("Remarks: "+remarks.toString());
 	}
+	
 	public void addRemarks(String r) {
 		remarks.append(r).append(" ");
 	}
+	
 	public void compareNames(Student other) {
 		System.out.println("Using == " + (this.name == other.name));
-		System.out.println("Using equals()method: " + this.name.equals(other.name));
+		System.out.println("Using equals() method: " + this.name.equals(other.name));
 	}
+	
 	public char calculateGrade() {
 		if(marks>=90) return 'A';
 		if(marks>=75) return 'B';
